@@ -1,0 +1,26 @@
+# Environment & secrets
+.env
+*.env
+
+# Generated models and artifacts
+*.pkl
+
+# Generated data files & results
+*.csv
+landing/
+
+# Logs
+mage.log
+*.log
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+
+# OS specific files
+.DS_Store
+Thumbs.db
