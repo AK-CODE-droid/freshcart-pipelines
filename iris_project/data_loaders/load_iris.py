@@ -27,3 +27,4 @@ def load_data(*args, **kwargs):
 @test
 def test_output(output, *args):
     assert len(output) == 150, 'Iris must have 150 rows'
+

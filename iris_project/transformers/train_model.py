@@ -41,3 +41,4 @@ def train(df, *args, **kwargs):
 def test_accuracy(output, *args):
     accuracy = (output['predicted'] == output['target']).mean()
     assert accuracy >= 0.8, 'Model accuracy is below 80%'
+

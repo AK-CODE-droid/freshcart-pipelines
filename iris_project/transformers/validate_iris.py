@@ -22,3 +22,4 @@ def transform(df, *args, **kwargs):
 def test_iris_data(output, *args):
     assert output.isnull().sum().sum() == 0, 'Missing values found in Iris dataset'
     assert output['target'].nunique() == 3, 'Iris must have exactly 3 classes'
+
