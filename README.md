@@ -30,3 +30,19 @@ freshcart-pipelines/
    ```bash
    pytest
    ```
+
+## Part D: RabbitMQ stream
+
+Install dependencies and start a RabbitMQ broker. The scripts use a local broker by default; for a hosted
+broker, set `RABBITMQ_URL` without committing it to Git.
+
+```bash
+pip install -r requirements.txt
+python stream/driver.py Ravi 'bangalore.koramangala.*'
+python stream/driver.py Meena 'bangalore.*.food'
+python stream/driver.py Control 'bangalore.#'
+python stream/dispatcher.py
+```
+
+The dispatcher sends a request every two seconds. Every tenth request deliberately omits `zone`; drivers
+reject it with `basic_nack(requeue=False)` and acknowledge valid requests with `basic_ack`.
